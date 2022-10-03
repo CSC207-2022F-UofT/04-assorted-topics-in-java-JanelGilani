@@ -29,11 +29,11 @@ class DrivableMap {
      */
 
     public boolean addDrivable(String id, Drivable object){
-        if(drivable_map.containsKey(id)){
+        if(this.drivable_map.containsKey(id)){
             return false;
         }
         else{
-            drivable_map.put(id, object);
+            this.drivable_map.put(id, object);
             return true;
         }
     }
@@ -63,7 +63,7 @@ class DrivableMap {
      */
 
     public List<Tradable> getTradable(){
-        ArrayList<Tradable> list_so_far = new ArrayList<Tradable>();
+        ArrayList<Tradable> list_so_far = new ArrayList<>();
         for (Drivable item: drivable_map.values()){
             if(item instanceof Tradable){
                 list_so_far.add((Tradable) item);
